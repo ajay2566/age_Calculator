@@ -9,17 +9,9 @@ class AgeCalculator extends StatefulWidget {
 }
 
 class _AgeCalculatorState extends State<AgeCalculator> {
-
-
-
-
-
   DateTime selectedToDate = DateTime.now();
   DateTime dateOfBirth = DateTime.now();
   DateTime now = DateTime.now();
-
-
-
 
   Future<void> selectToDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -101,7 +93,8 @@ class _AgeCalculatorState extends State<AgeCalculator> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 15, right: 15, bottom: 5, top: 0),
+                  padding: const EdgeInsets.only(
+                      left: 15, right: 15, bottom: 5, top: 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -154,7 +147,8 @@ class _AgeCalculatorState extends State<AgeCalculator> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 15, right: 15, bottom: 5, top: 0),
+                  padding: const EdgeInsets.only(
+                      left: 15, right: 15, bottom: 5, top: 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -178,19 +172,39 @@ class _AgeCalculatorState extends State<AgeCalculator> {
                 ),
               ),
             ),
-            Container(
-              height: 45,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Row(
-                children: <Widget>[
-                  ElevatedButton(
-                      onPressed: () {}, child: const Text("Calculate")),
-                  ElevatedButton(onPressed: () {}, child: const Text("Clear"))
-                ],
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Container(
+                height: 45,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  //border: Border.all(color: Colors.white),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    ElevatedButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "Calculate",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        )),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "Clear",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             const SizedBox(
@@ -415,7 +429,8 @@ class _AgeCalculatorState extends State<AgeCalculator> {
                       child: Column(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(left: 26,bottom: 10),
+                            padding:
+                                const EdgeInsets.only(left: 26, bottom: 10),
                             child: Row(
                               children: <Widget>[
                                 Text(
@@ -425,7 +440,9 @@ class _AgeCalculatorState extends State<AgeCalculator> {
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.appPrimary),
                                 ),
-                                const SizedBox(width: 30,),
+                                const SizedBox(
+                                  width: 30,
+                                ),
                                 const Text(
                                   "0",
                                   style: TextStyle(
@@ -439,7 +456,8 @@ class _AgeCalculatorState extends State<AgeCalculator> {
                           Row(
                             children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.only(left: 7,bottom: 10),
+                                padding:
+                                    const EdgeInsets.only(left: 7, bottom: 10),
                                 child: Text(
                                   "Total months",
                                   style: TextStyle(
@@ -448,7 +466,9 @@ class _AgeCalculatorState extends State<AgeCalculator> {
                                       color: AppColors.appPrimary),
                                 ),
                               ),
-                              const SizedBox(width: 30,),
+                              const SizedBox(
+                                width: 30,
+                              ),
                               const Padding(
                                 padding: EdgeInsets.only(bottom: 10),
                                 child: Text(
@@ -464,7 +484,8 @@ class _AgeCalculatorState extends State<AgeCalculator> {
                           Row(
                             children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.only(left: 34,bottom: 10),
+                                padding:
+                                    const EdgeInsets.only(left: 34, bottom: 10),
                                 child: Text(
                                   "Total days",
                                   style: TextStyle(
@@ -473,7 +494,9 @@ class _AgeCalculatorState extends State<AgeCalculator> {
                                       color: AppColors.appPrimary),
                                 ),
                               ),
-                              const SizedBox(width: 30,),
+                              const SizedBox(
+                                width: 30,
+                              ),
                               const Padding(
                                 padding: EdgeInsets.only(bottom: 10),
                                 child: Text(
@@ -489,16 +512,19 @@ class _AgeCalculatorState extends State<AgeCalculator> {
                           Row(
                             children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.only(left: 34,bottom: 10),
+                                padding:
+                                    const EdgeInsets.only(left: 34, bottom: 10),
                                 child: Text(
-                                  "Total hour",
+                                  "Total hours",
                                   style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.appPrimary),
                                 ),
                               ),
-                              const SizedBox(width: 30,),
+                              const SizedBox(
+                                width: 22,
+                              ),
                               const Padding(
                                 padding: EdgeInsets.only(bottom: 10),
                                 child: Text(
@@ -514,7 +540,8 @@ class _AgeCalculatorState extends State<AgeCalculator> {
                           Row(
                             children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.only(left: 2,bottom: 10),
+                                padding:
+                                    const EdgeInsets.only(left: 2, bottom: 10),
                                 child: Text(
                                   "Total minutes",
                                   style: TextStyle(
@@ -523,7 +550,9 @@ class _AgeCalculatorState extends State<AgeCalculator> {
                                       color: AppColors.appPrimary),
                                 ),
                               ),
-                              const SizedBox(width: 30,),
+                              const SizedBox(
+                                width: 30,
+                              ),
                               const Padding(
                                 padding: EdgeInsets.only(bottom: 10),
                                 child: Text(
@@ -545,7 +574,9 @@ class _AgeCalculatorState extends State<AgeCalculator> {
                                     fontWeight: FontWeight.bold,
                                     color: AppColors.appPrimary),
                               ),
-                              const SizedBox(width: 30,),
+                              const SizedBox(
+                                width: 30,
+                              ),
                               const Text(
                                 "0",
                                 style: TextStyle(
@@ -555,7 +586,6 @@ class _AgeCalculatorState extends State<AgeCalculator> {
                               ),
                             ],
                           ),
-
                         ],
                       ),
                     ),

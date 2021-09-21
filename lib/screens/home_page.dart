@@ -1,6 +1,7 @@
 import 'package:age_calculator/utils/color/color.dart';
 import 'package:flutter/material.dart';
 
+import 'add_subtract_day.dart';
 import 'age_calculator.dart';
 
 class HomePage extends StatefulWidget {
@@ -54,7 +55,7 @@ class _HomePageState extends State<HomePage> {
             ]),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(5.0),
             child: Column(
               children: <Widget>[
                 Container(
@@ -164,36 +165,46 @@ class _HomePageState extends State<HomePage> {
                   height: 290,
                   width: double.infinity,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 8, top: 17),
+                    padding: const EdgeInsets.only( top: 8,left: 8),
                     child: Column(
                       children: <Widget>[
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: <Widget>[
-                            const Icon(
-                              Icons.supervised_user_circle,
-                              color: Colors.white,
-                              size: 30,
-                            ),
-                            const SizedBox(
-                              width: 15,
-                            ),
-                            InkWell(
-                              child: Text(
-                                "Add/Subtract Days from Date",
-                                style: TextStyle(
-                                    color: AppColors.appPrimary,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
+                            const Padding(
+                              padding: EdgeInsets.only(top: 10),
+                              child: Icon(
+                                Icons.supervised_user_circle,
+                                color: Colors.white,
+                                size: 30,
                               ),
                             ),
-                            const SizedBox(
-                              width: 0,
+
+                            ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(Colors.black),
+                              ),
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>const AddSubtract()));
+                              },
+                              child: InkWell(
+                                child: Text(
+                                  "Add/Subtract Days from Date",
+                                  style: TextStyle(
+                                      color: AppColors.appPrimary,
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
                             ),
-                            const Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.grey,
+
+                            const Padding(
+                              padding: EdgeInsets.only(top: 10,),
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.grey,
+                              ),
                             )
                           ],
                         ),
